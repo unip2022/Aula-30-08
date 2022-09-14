@@ -1,0 +1,19 @@
+1. Fazer um pr
+ograma que calcule a media de um aluno de ads.
+Para a media utilizar np1*0.4 + np2*0.4 + PIM*0.2 
+Aluno precisa ter 75%> de presença 
+
+2. Fazer uma calculadora que com dois valores, execute: adição, subtração, divisão e multiplicação
+
+3. Desenvolver  uma funcionalidade que informe a porcentagem que um aluno faltou em 50 aulas, input colocar quantas aulas ele viu, e dessas aulas desenvolver a porcentagem de faltas (50 - aulasvistas) = dias que faltou 
+
+50 Aulas 
+
+75%>
+
+tem que ter vindo em 38 aulas para passar 
+
+muita falta nota boa X
+pouca falta nota boa x
+pouca falta nota ruim x
+muita falta nota ruim

@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include <locale.h>
-#include <iostream>
+
 
 //using namespace std;
 
@@ -21,7 +21,7 @@ int main()
         printf("3. Segurança da Informação\n");
         printf("4. Media do aluno\n");
         printf("5. Diferença maior e menor\n");
-        printf("6. Em ordem tres numeros\n");
+        printf("6. MediaADS\n");
         printf("0. Sair\n");
 
         scanf("%d", &continuar);
@@ -52,7 +52,7 @@ int main()
                 break;
 
             case 6:
-                ordemtresnumeros() ;
+                MediaADS();
                 break;
 
             case 0:
@@ -140,39 +140,58 @@ void difmaiormenor()
   	return 0;
 }
 
-void ordemtresnumeros()
+void MediaADS()
 {
-    int num1, num2, num3, temp;
 
-    cout << "Numero 1: ";
-    cin >> num1;
+    float Np1;
+    float Np2;
+    float Pim;
+    float Media;
+    int   Presenca;
+    int   Falta;
 
-    cout << "Numero 2: ";
-    cin >> num2;
+    printf ("Digite a nota da Np1: ");
+    scanf  ("%f", &Np1);
+    printf ("Digite a nota da Np2: ");
+    scanf  ("%f", &Np2);
+    printf ("Digite a nota do Pim: ");
+    scanf  ("%f", &Pim);
+    printf ("Quantas presencas voce teve no semestre: ");
+    scanf  ("%d", &Presenca);
 
-    cout << "Numero 3: ";
-    cin >> num3;
+    Falta = (50-Presenca);
+    Media = ((Np1*0.4) + (Np2*0.4) + (Pim*0.2));
 
-    if(num2 > num1){
-        temp = num1;
-        num1 = num2;
-        num2 = temp;
+    if (Falta>12 &&  Media>=5)
+    {
+        printf (
+            "voce faltou %d, ou seja mais 75%\n"
+            "voce foi reprovado\n", Falta);
     }
 
-    if(num3 > num1){
-        temp = num1;
-        num1 = num3;
-        num3 = temp;
+    if (Media>=5 && Falta<=12)
+    {
+        printf (
+            "Sua Media e sua presenca foram %d,e %.2f, respectivamente. "
+            "Ambas atingiram o necessario\nAprovado", Presenca,Media);
     }
-
-    if(num3 > num2){
-        temp = num2;
-        num2 = num3;
-        num3 = temp;
+    if (Falta<=12 && Media<5)
+    {
+        printf (
+             "Sua media foi %.2f, ou seja menor que 5\n"
+             "Reprovado",Media);
     }
+   if  (Falta>12 && Media<5)
+   {
+       printf (
+               "Sua media e sua nota foram %.2f e %d,respectivamente"
+               ". Ambas nao atingiram o necessario\nReprovado",Media,Falta);
 
-    cout <<num1<<" >= "<<num2<<" >= "<<num3<<endl;
+   }
+
+
 }
+
 
 void sair()
 {
